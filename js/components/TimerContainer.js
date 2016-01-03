@@ -7,7 +7,7 @@ export default React.createClass({
   render: function () {
     let timerNodes = this.props.timers.map(function (timer, index) {
       return (
-        <Timer key={index} title={timer.title} count={timer.count} />
+        <Timer key={index} active={timer.active} title={timer.title} count={timer.count} />
       );
     });
     return (
