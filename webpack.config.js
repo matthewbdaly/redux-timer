@@ -2,8 +2,7 @@ var webpack = require('webpack');
 module.exports = {  
     entry: [
       'webpack/hot/only-dev-server',
-      "./js/app.js",
-      "./scss/style.scss"
+      "./js/app.js"
     ],
     output: {
         path: __dirname + '/build',
@@ -17,6 +16,7 @@ module.exports = {
         ]
     },
     plugins: [
+      new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin()
     ]
 };
