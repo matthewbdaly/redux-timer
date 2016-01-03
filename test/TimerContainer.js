@@ -1,18 +1,19 @@
 import React from 'react/addons';
 import ReactDOM from 'react-dom';
-import Timer from '../js/components/Timer';
+import TimerContainer from '../js/components/TimerContainer';
 import {expect} from 'chai';
 
 const {renderIntoDocument, scryRenderedDOMComponentsWithClass, Simulate} = React.addons.TestUtils;
 
-describe('Timer', () => {
+describe('Timer container', () => {
   it('renders as expected', () => {
     const timer = {
       title: 'My timer',
       count: 5
     };
+    const timers = [timer];
     const component = renderIntoDocument(
-      <Timer title={timer.title} count={timer.count}/>
+      <TimerContainer timers={timers} />
     );
     const componentNode = ReactDOM.findDOMNode(component);
 
