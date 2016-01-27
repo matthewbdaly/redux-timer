@@ -10,13 +10,14 @@ describe('reducer', () => {
       type: 'ADD_TIMER',
       state: Map({
         name: 'My timer',
+        active: false,
         count: 0
       })
     };
     const nextState = reducer(initialState, action);
 
     expect(nextState).to.equal(fromJS(
-      [{name: 'My timer', count: 0}]
+      [{name: 'My timer', active: false, count: 0}]
     ));
 
   });
