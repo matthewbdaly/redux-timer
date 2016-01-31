@@ -18,7 +18,11 @@ function incrementTimer(state, name) {
     state.findIndex(function (item) {
       return item.get('name') == name;
     }), function (item) {
-      return item.set('count', item.get('count') + 1);
+      if (item.get('active') == true) {
+        return item.set('count', item.get('count') + 1);
+      } else {
+        return item;
+      }
     });
 }
 
