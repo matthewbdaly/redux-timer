@@ -21,4 +21,20 @@ describe('reducer', () => {
     ));
 
   });
+
+  it('handles TOGGLE_TIMER', () => {
+    const initialState = fromJS(
+      [{name: 'My timer', active: false, count: 0}]
+    );
+    const action = {
+      type: 'TOGGLE_TIMER',
+      name: 'My timer'
+    };
+    const nextState = reducer(initialState, action);
+
+    expect(nextState).to.equal(fromJS(
+      [{name: 'My timer', active: true, count: 0}]
+    ));
+
+  });
 });
