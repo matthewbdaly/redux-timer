@@ -13,12 +13,23 @@ function toggleTimer(state, name) {
     });
 }
 
+function incrementTimer(state, name) {
+  return state.update(
+    state.findIndex(function (item) {
+      return item.get('name') == name;
+    }), function (item) {
+      return item.set('count', item.get('count') + 1);
+    });
+}
+
 export default function(state = List(), action) {
   switch (action.type) {
     case 'ADD_TIMER':
       return addTimer(state, action.state);
     case 'TOGGLE_TIMER':
       return toggleTimer(state, action.name);
+    case 'INCREMENT_TIMER':
+      return incrementTimer(state, action.name);
   }
   return state;
 }
