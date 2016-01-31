@@ -3,7 +3,7 @@ import {expect} from 'chai';
 
 import reducer from '../js/reducer';
 
-describe('reducer', () => {
+describe('Reducer', () => {
   it('handles ADD_TIMER', () => {
     const initialState = List();
     const action = {
